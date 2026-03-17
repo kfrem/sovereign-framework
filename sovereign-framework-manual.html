@@ -1,0 +1,2047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE SOVEREIGN FRAMEWORK™ — Complete Skills Manual</title>
+<meta name="description" content="The complete skills manual for The Sovereign Framework - 18 interconnected skills for sovereign economic development.">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8D48B;
+  --gold-dark: #A07D2E;
+  --dark: #1A1A2E;
+  --dark-2: #16213E;
+  --dark-3: #0F3460;
+  --bg: #0D0D1A;
+  --bg-card: #1A1A2E;
+  --bg-card-hover: #222244;
+  --text: #E8E8F0;
+  --text-muted: #9A9AB0;
+  --text-bright: #FFFFFF;
+  --accent: #E94560;
+  --green: #2ECC71;
+  --blue: #3498DB;
+  --orange: #E67E22;
+  --red: #E74C3C;
+  --sidebar-w: 300px;
+  --header-h: 70px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+.header {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: var(--header-h);
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 100%);
+  border-bottom: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 30px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.header-brand {
+  display: flex; align-items: center; gap: 15px;
+}
+
+.header-logo {
+  width: 45px; height: 45px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 900; color: var(--dark);
+}
+
+.header-title {
+  font-size: 1.3rem; font-weight: 700; color: var(--gold);
+  letter-spacing: 2px; text-transform: uppercase;
+}
+
+.header-subtitle {
+  font-size: 0.75rem; color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.header-search {
+  position: relative; width: 300px;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 10px 15px 10px 40px;
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  color: var(--text);
+  font-size: 0.9rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.header-search input:focus {
+  border-color: var(--gold);
+  background: rgba(255,255,255,0.1);
+  box-shadow: 0 0 15px rgba(201,168,76,0.15);
+}
+
+.header-search .search-icon {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  color: var(--text-muted); font-size: 1rem;
+}
+
+.search-results {
+  display: none;
+  position: absolute; top: 100%; left: 0; right: 0;
+  background: var(--dark); border: 1px solid var(--gold);
+  border-radius: 8px; margin-top: 5px;
+  max-height: 400px; overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  z-index: 1001;
+}
+
+.search-results.active { display: block; }
+
+.search-result-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-result-item:hover { background: var(--bg-card-hover); }
+
+.search-result-item .result-title {
+  color: var(--gold); font-weight: 600; font-size: 0.9rem;
+}
+
+.search-result-item .result-preview {
+  color: var(--text-muted); font-size: 0.8rem; margin-top: 3px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none; border: none;
+  color: var(--gold); font-size: 1.5rem; cursor: pointer;
+  padding: 5px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed; top: var(--header-h); left: 0; bottom: 0;
+  width: var(--sidebar-w);
+  background: var(--dark);
+  border-right: 1px solid rgba(201,168,76,0.15);
+  overflow-y: auto;
+  padding: 20px 0;
+  z-index: 900;
+  transition: transform 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-track { background: transparent; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+.nav-section {
+  padding: 8px 20px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 15px;
+}
+
+.nav-section:first-child { margin-top: 0; }
+
+.nav-link {
+  display: block;
+  padding: 8px 20px 8px 25px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(201,168,76,0.05);
+  border-left-color: var(--gold-dark);
+}
+
+.nav-link.active {
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  border-left-color: var(--gold);
+  font-weight: 600;
+}
+
+.nav-link.sub {
+  padding-left: 40px;
+  font-size: 0.8rem;
+}
+
+.nav-link .nav-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 6px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.badge-master { background: var(--accent); color: white; }
+.badge-discovery { background: var(--blue); color: white; }
+.badge-gov { background: var(--green); color: white; }
+.badge-enterprise { background: var(--orange); color: white; }
+.badge-education { background: #9B59B6; color: white; }
+.badge-analytical { background: #1ABC9C; color: white; }
+.badge-capital { background: #F39C12; color: white; }
+.badge-sales { background: #E74C3C; color: white; }
+.badge-training { background: #2980B9; color: white; }
+.badge-data { background: #7F8C8D; color: white; }
+
+/* MAIN */
+.main {
+  margin-left: var(--sidebar-w);
+  margin-top: var(--header-h);
+  padding: 40px 50px 80px;
+  max-width: 1000px;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--dark-2), var(--dark-3));
+  border: 1px solid var(--gold);
+  border-radius: 16px;
+  padding: 50px 40px;
+  margin-bottom: 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute; top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(201,168,76,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.hero .version {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.hero .author {
+  color: var(--gold-light);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hero .formula {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 50px;
+  scroll-margin-top: 90px;
+}
+
+.section-header {
+  display: flex; align-items: center; gap: 15px;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(201,168,76,0.2);
+}
+
+.section-number {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--dark);
+  font-weight: 900;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.section-header h2 {
+  font-size: 1.6rem;
+  color: var(--text-bright);
+  font-weight: 700;
+}
+
+h3 {
+  color: var(--gold);
+  font-size: 1.2rem;
+  margin: 25px 0 15px;
+}
+
+h4 {
+  color: var(--gold-light);
+  font-size: 1rem;
+  margin: 20px 0 10px;
+}
+
+p { margin-bottom: 15px; }
+
+/* CARDS */
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+/* DOCTRINE TABLE */
+.doctrine-grid {
+  display: grid;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.doctrine-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 20px 25px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  transition: all 0.3s;
+}
+
+.doctrine-item:hover {
+  border-color: var(--gold);
+  box-shadow: 0 5px 20px rgba(201,168,76,0.1);
+}
+
+.doctrine-num {
+  width: 36px; height: 36px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--dark);
+  font-weight: 900;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.doctrine-content h4 {
+  color: var(--gold); margin: 0 0 5px;
+}
+
+.doctrine-content p {
+  color: var(--text-muted); font-size: 0.9rem; margin: 0;
+}
+
+/* SKILL CARDS */
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 14px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: all 0.3s;
+  scroll-margin-top: 90px;
+}
+
+.skill-card:hover {
+  border-color: rgba(201,168,76,0.3);
+}
+
+.skill-card-header {
+  padding: 20px 25px;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.skill-card-header:hover {
+  background: linear-gradient(135deg, rgba(201,168,76,0.12), transparent);
+}
+
+.skill-card-title {
+  display: flex; align-items: center; gap: 12px;
+}
+
+.skill-cmd {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: var(--gold);
+  font-weight: 700;
+  background: rgba(201,168,76,0.1);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+.skill-name {
+  font-size: 1rem;
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+.skill-toggle {
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+}
+
+.skill-card.expanded .skill-toggle {
+  transform: rotate(180deg);
+}
+
+.skill-card-body {
+  display: none;
+  padding: 0 25px 25px;
+}
+
+.skill-card.expanded .skill-card-body {
+  display: block;
+}
+
+.skill-meta {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-bottom: 20px;
+}
+
+.skill-meta-item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+}
+
+.skill-meta-item .label {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-meta-item .value {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+/* OUTPUT LIST */
+.output-list {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.output-list li {
+  padding: 8px 0 8px 25px;
+  position: relative;
+  color: var(--text);
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.output-list li::before {
+  content: '';
+  position: absolute; left: 0; top: 16px;
+  width: 8px; height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+
+.output-list li strong {
+  color: var(--gold-light);
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.9rem;
+}
+
+thead th {
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--gold-dark);
+}
+
+tbody td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--text);
+}
+
+tbody tr:hover {
+  background: rgba(201,168,76,0.03);
+}
+
+tbody td:first-child {
+  font-weight: 600;
+  color: var(--gold-light);
+}
+
+/* QUICK REF TABLE */
+.quick-ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 0.85rem;
+}
+
+.quick-ref-table thead th {
+  background: rgba(201,168,76,0.15);
+  color: var(--gold);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--gold-dark);
+  position: sticky;
+  top: 0;
+}
+
+.quick-ref-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.quick-ref-table tbody tr:hover {
+  background: rgba(201,168,76,0.05);
+}
+
+/* WORKFLOW */
+.workflow-block {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 20px 0;
+}
+
+.workflow-block h4 {
+  margin-top: 0;
+}
+
+.workflow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.workflow-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.workflow-cmd {
+  font-family: 'Courier New', monospace;
+  color: var(--gold);
+  font-weight: 600;
+  background: rgba(201,168,76,0.1);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  min-width: 200px;
+}
+
+.workflow-arrow {
+  color: var(--gold-dark);
+  font-size: 1.2rem;
+}
+
+.workflow-desc {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* KEY INSIGHT */
+.key-insight {
+  background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(201,168,76,0.02));
+  border-left: 4px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  padding: 15px 20px;
+  margin: 20px 0;
+}
+
+.key-insight strong {
+  color: var(--gold);
+}
+
+.key-insight p { margin: 0; color: var(--text); font-size: 0.9rem; }
+
+/* CODE BLOCK */
+.code-block {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--gold-light);
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+/* DIAGRAM */
+.diagram-box {
+  background: rgba(0,0,0,0.3);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 25px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--gold-light);
+  margin: 25px 0;
+  overflow-x: auto;
+  white-space: pre;
+  text-align: center;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+  position: fixed; bottom: 30px; right: 30px;
+  width: 45px; height: 45px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--dark);
+  border: none; border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+  align-items: center; justify-content: center;
+  box-shadow: 0 5px 20px rgba(201,168,76,0.3);
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+.back-to-top.visible { display: flex; }
+.back-to-top:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(201,168,76,0.4); }
+
+/* FOOTER */
+.footer {
+  margin-left: var(--sidebar-w);
+  padding: 30px 50px;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.footer .gold { color: var(--gold); font-weight: 700; }
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: fixed; top: var(--header-h); left: 0; right: 0;
+  height: 3px; background: rgba(255,255,255,0.05); z-index: 999;
+}
+
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.1s;
+}
+
+/* POPULATION TABLE */
+.pop-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.pop-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.pop-card h5 {
+  color: var(--gold); font-size: 0.95rem; margin-bottom: 10px;
+}
+
+.pop-card p {
+  color: var(--text-muted); font-size: 0.85rem; margin-bottom: 5px;
+}
+
+.pop-card .pathway {
+  color: var(--green); font-size: 0.8rem; font-weight: 600; margin-top: 10px;
+}
+
+/* WHO TABLE CARD VIEW */
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.who-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 10px;
+  padding: 18px;
+  transition: all 0.3s;
+}
+
+.who-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.who-card .who-label {
+  color: var(--text-muted); font-size: 0.8rem; margin-bottom: 5px;
+}
+
+.who-card .who-start {
+  color: var(--gold); font-family: 'Courier New', monospace; font-weight: 700;
+  font-size: 0.95rem; margin-bottom: 3px;
+}
+
+.who-card .who-then {
+  color: var(--text-muted); font-size: 0.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .main { margin-left: 0; padding: 30px 20px 60px; }
+  .footer { margin-left: 0; padding: 20px; }
+  .menu-toggle { display: block; }
+  .header-search { width: 200px; }
+  .hero h1 { font-size: 1.6rem; }
+  .pop-grid { grid-template-columns: 1fr; }
+  .who-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .header-search { display: none; }
+  .hero { padding: 30px 20px; }
+  .hero h1 { font-size: 1.3rem; }
+}
+
+/* PRINT */
+@media print {
+  .sidebar, .header, .back-to-top, .progress-bar, .menu-toggle { display: none !important; }
+  .main { margin-left: 0; padding: 20px; }
+  .skill-card-body { display: block !important; }
+  .skill-card { break-inside: avoid; }
+  body { background: white; color: #333; }
+  .hero { border-color: #333; }
+  .hero h1, h2, h3, h4, .skill-cmd, .skill-name { color: #333 !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-brand">
+    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">&#9776;</button>
+    <div class="header-logo">SF</div>
+    <div>
+      <div class="header-title">Sovereign Framework</div>
+      <div class="header-subtitle">Complete Skills Manual &bull; v1.0</div>
+    </div>
+  </div>
+  <div class="header-search">
+    <span class="search-icon">&#128269;</span>
+    <input type="text" id="searchInput" placeholder="Search skills, topics..." autocomplete="off">
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</header>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="nav-section">Overview</div>
+  <a href="#hero" class="nav-link">Home</a>
+  <a href="#what-is" class="nav-link">What Is The Framework?</a>
+  <a href="#doctrines" class="nav-link">Five Sovereign Doctrines</a>
+  <a href="#how-to-use" class="nav-link">How To Use The Skills</a>
+  <a href="#quick-ref" class="nav-link">Skill Directory</a>
+
+  <div class="nav-section">Skill Profiles</div>
+  <a href="#skill-solve" class="nav-link">/solve <span class="nav-badge badge-master">Master</span></a>
+  <a href="#skill-asset-audit" class="nav-link">/asset-audit <span class="nav-badge badge-discovery">Discovery</span></a>
+  <a href="#skill-opportunity-scan" class="nav-link">/opportunity-scan <span class="nav-badge badge-discovery">Discovery</span></a>
+  <a href="#skill-gov-proposal" class="nav-link">/gov-proposal <span class="nav-badge badge-gov">Gov</span></a>
+  <a href="#skill-workforce-engine" class="nav-link">/workforce-engine <span class="nav-badge badge-gov">Gov</span></a>
+  <a href="#skill-grad-bridge" class="nav-link">/grad-bridge <span class="nav-badge badge-education">Edu</span></a>
+  <a href="#skill-idea-engine" class="nav-link">/idea-engine <span class="nav-badge badge-enterprise">Enterprise</span></a>
+  <a href="#skill-community-enterprise" class="nav-link">/community-enterprise <span class="nav-badge badge-enterprise">Enterprise</span></a>
+  <a href="#skill-ghana-model" class="nav-link">/community-business-model-ghana <span class="nav-badge badge-enterprise">GH</span></a>
+  <a href="#skill-business-rescue" class="nav-link">/business-rescue <span class="nav-badge badge-enterprise">Enterprise</span></a>
+  <a href="#skill-financial-model" class="nav-link">/financial-model <span class="nav-badge badge-analytical">Analytical</span></a>
+  <a href="#skill-social-value" class="nav-link">/social-value <span class="nav-badge badge-analytical">Analytical</span></a>
+  <a href="#skill-human-capital" class="nav-link">/human-capital-profile <span class="nav-badge badge-analytical">Analytical</span></a>
+  <a href="#skill-crowd-fund" class="nav-link">/crowd-fund <span class="nav-badge badge-capital">Capital</span></a>
+  <a href="#skill-pitch" class="nav-link">/pitch <span class="nav-badge badge-sales">Sales</span></a>
+  <a href="#skill-proposal-trainer" class="nav-link">/proposal-trainer <span class="nav-badge badge-training">Training</span></a>
+  <a href="#skill-data-verify" class="nav-link">/data-verify <span class="nav-badge badge-data">Data</span></a>
+  <a href="#skill-data-sources" class="nav-link">/data-sources <span class="nav-badge badge-data">Data</span></a>
+
+  <div class="nav-section">Integration</div>
+  <a href="#workflows" class="nav-link">How Skills Work Together</a>
+  <a href="#who-uses" class="nav-link">Who Should Use What</a>
+  <a href="#system-map" class="nav-link">System Map</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <h1>THE SOVEREIGN FRAMEWORK&trade;</h1>
+  <div class="version">Complete Skills Manual &bull; Version 1.0 &bull; March 2026</div>
+  <div class="author">Prepared by Godfred Frimpong</div>
+  <div class="formula">
+    IDLE ASSETS &nbsp;+&nbsp; ORGANISED PEOPLE &nbsp;+&nbsp; MARKET CONNECTION &nbsp;=&nbsp; WEALTH &nbsp;+&nbsp; JOBS &nbsp;+&nbsp; TAXPAYERS
+  </div>
+</div>
+
+<!-- SECTION 1: WHAT IS -->
+<section class="section" id="what-is">
+  <div class="section-header">
+    <div class="section-number">1</div>
+    <h2>What Is The Sovereign Framework?</h2>
+  </div>
+  <p>The Sovereign Framework is a system of <strong>18 interconnected skills</strong> (tools) that solve one problem at every scale: <strong>turning what is idle, wasted, or untapped into profitable, sustainable economic activity</strong> that creates jobs, builds wealth, expands the tax base, and makes communities and governments self-sustaining.</p>
+  <p>Every skill starts from the same principle: <strong>audit what already exists before asking for anything new.</strong></p>
+  <ul class="output-list">
+    <li>A community has land, skills, savings groups, natural resources, and social structures</li>
+    <li>A government ministry has buildings, staff, budgets, data, and legal mandates</li>
+    <li>A struggling business has equipment, customers, relationships, and a brand</li>
+  </ul>
+  <p>The Framework makes what is invisible, visible &mdash; and then activates it.</p>
+</section>
+
+<!-- SECTION 2: DOCTRINES -->
+<section class="section" id="doctrines">
+  <div class="section-header">
+    <div class="section-number">2</div>
+    <h2>The Five Sovereign Doctrines</h2>
+  </div>
+  <p>These are the non-negotiable principles that govern every skill in the Framework:</p>
+
+  <div class="doctrine-grid">
+    <div class="doctrine-item">
+      <div class="doctrine-num">1</div>
+      <div class="doctrine-content">
+        <h4>Sovereign Assets First</h4>
+        <p>Before designing anything, audit what already exists. The enterprise or programme is built on what the community, government, or business already has &mdash; not on what it needs to be given.</p>
+      </div>
+    </div>
+    <div class="doctrine-item">
+      <div class="doctrine-num">2</div>
+      <div class="doctrine-content">
+        <h4>Market Revenue Mandate</h4>
+        <p>Every solution must generate private market income. No single revenue source (including government) should exceed 60% of total revenue by Year 3. This is how you survive budget cuts.</p>
+      </div>
+    </div>
+    <div class="doctrine-item">
+      <div class="doctrine-num">3</div>
+      <div class="doctrine-content">
+        <h4>People as Delivery</h4>
+        <p>The unemployed are not the problem &mdash; they are the workforce. Three populations are always available: unemployed graduates, long-term unemployed adults, and retired professionals.</p>
+      </div>
+    </div>
+    <div class="doctrine-item">
+      <div class="doctrine-num">4</div>
+      <div class="doctrine-content">
+        <h4>Profitable &amp; Provable</h4>
+        <p>Every programme must be self-sustaining within 24 months, or its social value must be proven with financial rigour. No vague "impact" claims &mdash; numbers or nothing.</p>
+      </div>
+    </div>
+    <div class="doctrine-item">
+      <div class="doctrine-num">5</div>
+      <div class="doctrine-content">
+        <h4>Evidence-Based Everything</h4>
+        <p>Every figure in every document must be verified against official sources. Exchange rates checked same-day. Government budget from current year. No stale data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: HOW TO USE -->
+<section class="section" id="how-to-use">
+  <div class="section-header">
+    <div class="section-number">3</div>
+    <h2>How To Use The Skills</h2>
+  </div>
+
+  <h3>With Claude Code (Anthropic's AI CLI)</h3>
+  <p>Place the skill files from the <code>skills/</code> folder into <code>~/.claude/commands/</code> and invoke them with slash commands:</p>
+  <div class="code-block">/solve [describe your problem]
+/opportunity-scan [geography and sector]
+/community-enterprise [community description and enterprise idea]
+/financial-model [programme or business name]</div>
+
+  <h3>With Other AI Platforms (ChatGPT, Gemini, etc.)</h3>
+  <ul class="output-list">
+    <li>Open the relevant <code>.md</code> file from <code>skills/</code></li>
+    <li>Copy the full contents</li>
+    <li>Paste it as the first message or system prompt</li>
+    <li>Replace <code>$ARGUMENTS</code> with your specific input</li>
+    <li>The AI will follow the skill's structure and produce the output</li>
+  </ul>
+
+  <div class="key-insight">
+    <p><strong>Important:</strong> Skills can be chained. The output of one skill feeds into the next. Always run <code>/data-verify</code> first when producing any document with financial figures for government or investors.</p>
+  </div>
+</section>
+
+<!-- SECTION 4: QUICK REFERENCE -->
+<section class="section" id="quick-ref">
+  <div class="section-header">
+    <div class="section-number">4</div>
+    <h2>Skill Directory &mdash; Quick Reference</h2>
+  </div>
+
+  <div style="overflow-x:auto;">
+  <table class="quick-ref-table">
+    <thead>
+      <tr><th>#</th><th>Skill Command</th><th>Category</th><th>Purpose</th><th>Who It's For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td><code>/solve</code></td><td><span class="nav-badge badge-master">Master</span></td><td>Routes any complex problem to the right combination of skills</td><td>Anyone with a multi-layered problem</td></tr>
+      <tr><td>2</td><td><code>/asset-audit</code></td><td><span class="nav-badge badge-discovery">Discovery</span></td><td>Maps everything a government/business/community already owns</td><td>Government, organisations, communities</td></tr>
+      <tr><td>3</td><td><code>/opportunity-scan</code></td><td><span class="nav-badge badge-discovery">Discovery</span></td><td>Scans any geography for untapped business opportunities</td><td>Planners, entrepreneurs, communities</td></tr>
+      <tr><td>4</td><td><code>/gov-proposal</code></td><td><span class="nav-badge badge-gov">Gov</span></td><td>Writes bankable government proposals built on sovereign assets</td><td>Consultancies, ministries, NGOs</td></tr>
+      <tr><td>5</td><td><code>/workforce-engine</code></td><td><span class="nav-badge badge-gov">Gov</span></td><td>Designs the workforce for any programme using 3 populations</td><td>Programme directors, HR planners</td></tr>
+      <tr><td>6</td><td><code>/grad-bridge</code></td><td><span class="nav-badge badge-education">Edu</span></td><td>Ensures every graduate has a job, placement, or business on Day 1</td><td>Universities, TVET centres, schools</td></tr>
+      <tr><td>7</td><td><code>/idea-engine</code></td><td><span class="nav-badge badge-enterprise">Enterprise</span></td><td>Develops any rough idea into an investment-ready business plan</td><td>Students, entrepreneurs, families</td></tr>
+      <tr><td>8</td><td><code>/community-enterprise</code></td><td><span class="nav-badge badge-enterprise">Enterprise</span></td><td>Designs profitable community-owned collective enterprises</td><td>Communities, cooperatives, assemblies</td></tr>
+      <tr><td>9</td><td><code>/community-business-model-ghana</code></td><td><span class="nav-badge badge-enterprise">GH</span></td><td>Ghana-specific enterprise model with verified 2026 market data</td><td>Ghana communities and cooperatives</td></tr>
+      <tr><td>10</td><td><code>/business-rescue</code></td><td><span class="nav-badge badge-enterprise">Enterprise</span></td><td>Diagnoses and turnarounds struggling businesses in 90 days</td><td>Failing businesses, lenders</td></tr>
+      <tr><td>11</td><td><code>/financial-model</code></td><td><span class="nav-badge badge-analytical">Analytical</span></td><td>Full P&amp;L, cash flow, break-even, revenue architecture</td><td>Programme directors, investors</td></tr>
+      <tr><td>12</td><td><code>/social-value</code></td><td><span class="nav-badge badge-analytical">Analytical</span></td><td>Quantifies social return on investment (SROI)</td><td>Budget defenders, impact investors</td></tr>
+      <tr><td>13</td><td><code>/human-capital-profile</code></td><td><span class="nav-badge badge-analytical">Analytical</span></td><td>Deep activation profile for a specific population group</td><td>Workforce planners, educators</td></tr>
+      <tr><td>14</td><td><code>/crowd-fund</code></td><td><span class="nav-badge badge-capital">Capital</span></td><td>Generates investment prospectus and crowdfunding strategy</td><td>Entrepreneurs seeking capital</td></tr>
+      <tr><td>15</td><td><code>/pitch</code></td><td><span class="nav-badge badge-sales">Sales</span></td><td>Complete client engagement and sales system</td><td>Consultancies, directors pitching</td></tr>
+      <tr><td>16</td><td><code>/proposal-trainer</code></td><td><span class="nav-badge badge-training">Training</span></td><td>6-week training to create development professionals</td><td>Graduate cohorts, NGO staff</td></tr>
+      <tr><td>17</td><td><code>/data-verify</code></td><td><span class="nav-badge badge-data">Data</span></td><td>Mandatory data verification gateway</td><td>Quality control for all skills</td></tr>
+      <tr><td>18</td><td><code>/data-sources</code></td><td><span class="nav-badge badge-data">Data</span></td><td>Master registry of all free APIs and official data sources</td><td>Reference for all skills</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- SECTION 5 HEADER -->
+<section class="section" id="skill-profiles">
+  <div class="section-header">
+    <div class="section-number">5</div>
+    <h2>Detailed Skill Profiles</h2>
+  </div>
+  <p>Click any skill to expand its full profile &mdash; what it does, who it's for, what you give it, what it gives you back, and when to use it.</p>
+
+  <!-- SKILL 5.1: /solve -->
+  <div class="skill-card" id="skill-solve">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/solve</span>
+        <span class="skill-name">The Master Consultant Orchestrator</span>
+        <span class="nav-badge badge-master">Master</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/solve.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Master Orchestrator</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Anyone with a complex problem</span></div>
+      </div>
+      <p><strong>What it does:</strong> This is the brain of the Framework. You give it any complex, messy, multi-layered problem &mdash; and it diagnoses the problem, selects the right combination of other skills, puts them in the correct sequence, and produces an integrated solution.</p>
+      <p><strong>What you give it:</strong> A problem description. Can be vague ("youth unemployment in the Northern Region") or specific ("Ministry of Employment has 47 dormant TVET centres, 12,000 registered unemployed graduates, and a GHS 50 million budget they can't spend").</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Problem Diagnosis</strong> &mdash; What is actually happening, across 5 dimensions (nature, geography, urgency, complexity, audience)</li>
+        <li><strong>Three Critical Questions</strong> answered &mdash; What assets exist? What is the path to self-sufficiency? Where does the workforce come from?</li>
+        <li><strong>Skill Selection</strong> &mdash; Which skills to use and in what order</li>
+        <li><strong>Full Integrated Solution</strong> using 3-layer architecture: Foundation (assets), Engine (people), Sustainability (revenue)</li>
+        <li><strong>Critical Path</strong> &mdash; Numbered steps with owners and timelines</li>
+        <li><strong>Risk Register</strong> &mdash; What could go wrong and how to prevent it</li>
+        <li><strong>One-Page Master Brief</strong> &mdash; Visual summary</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key rules:</strong> Never recommends external funding as a starting point. Always starts with what already exists. Market revenue embedded from Day 1. Every solution must have a self-sustaining financial model.</p>
+      </div>
+      <p><strong>When to use:</strong> When the problem is too big or complex for a single skill. When you don't know which skill to start with. When the solution needs to combine government, community, workforce, and financial elements.</p>
+    </div>
+  </div>
+
+  <!-- SKILL 5.2: /asset-audit -->
+  <div class="skill-card" id="skill-asset-audit">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/asset-audit</span>
+        <span class="skill-name">Sovereign Asset Strategist</span>
+        <span class="nav-badge badge-discovery">Discovery</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/asset-audit.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Discovery</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Government, organisations, communities</span></div>
+      </div>
+      <p><strong>What it does:</strong> Audits EVERYTHING a government, organisation, or community already owns &mdash; and calculates how much idle value is sitting there unused. This is always the first step before designing any programme or enterprise.</p>
+      <p><strong>What you give it:</strong> Country, ministry or organisation, geographic region, and what you're trying to do.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Physical Asset Inventory</strong> &mdash; Land, buildings, equipment, vehicles (with location, current use, % utilisation, repurposing options)</li>
+        <li><strong>Human Capital Asset Inventory</strong> &mdash; Existing staff for redeployment, retired professionals, community structures (SUSU groups, women's associations)</li>
+        <li><strong>Programmatic Asset Inventory</strong> &mdash; Active and dormant government programmes, legal mandates, existing data/research</li>
+        <li><strong>Relational Asset Inventory</strong> &mdash; Government contacts, NGO relationships, community trust networks</li>
+        <li><strong>Financial Asset Inventory</strong> &mdash; Unspent budgets, revenue-generating assets not being monetised</li>
+        <li><strong>Asset Utilisation Matrix</strong> &mdash; Every asset rated 0&ndash;100% used, with repurposing priority</li>
+        <li><strong>Repurposing Blueprint</strong> &mdash; Specific plan for each high-priority underutilised asset</li>
+        <li><strong>Total Value Unlocked</strong> &mdash; Combined value in local currency</li>
+        <li><strong>90-Day Quick Wins</strong> &mdash; Zero-cost actions that prove value immediately</li>
+        <li><strong>One-Page Brief</strong> &mdash; Visual summary</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>The key insight:</strong> The phrase "we don't have the budget" almost always means "we haven't audited what we already have." This skill makes the invisible visible.</p>
+      </div>
+      <p><strong>When to use:</strong> ALWAYS first. Before any programme design, business plan, government proposal, or investment case.</p>
+    </div>
+  </div>
+
+  <!-- SKILL 5.3: /opportunity-scan -->
+  <div class="skill-card" id="skill-opportunity-scan">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/opportunity-scan</span>
+        <span class="skill-name">Economic Intelligence Analyst</span>
+        <span class="nav-badge badge-discovery">Discovery</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/opportunity-scan.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Discovery</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Planners, entrepreneurs, communities</span></div>
+      </div>
+      <p><strong>What it does:</strong> Scans any geography &mdash; a district, region, or country &mdash; and identifies every viable business opportunity that can be started using what already exists in that place.</p>
+      <p><strong>What you give it:</strong> A geography (country, region, district), optionally a sector focus, who will act on the opportunities, and what assets are already known.</p>
+      <h4>Eight Categories of Opportunities:</h4>
+      <ul class="output-list">
+        <li><strong>Import Substitution</strong> &mdash; What does this area buy from outside that could be made locally?</li>
+        <li><strong>Value Addition</strong> &mdash; What raw products leave unprocessed that could be processed here?</li>
+        <li><strong>Underserved Markets</strong> &mdash; Who has money but can't find a local supplier?</li>
+        <li><strong>Government Spending</strong> &mdash; What does government spend that local businesses could supply?</li>
+        <li><strong>Natural Resources</strong> &mdash; Forests, rivers, clay, medicinal plants &mdash; how to commercialise?</li>
+        <li><strong>Skills-Based Services</strong> &mdash; What can local people do that others will pay for?</li>
+        <li><strong>Digital/Platform Economy</strong> &mdash; Phone-based work with minimal startup</li>
+        <li><strong>Circular Economy</strong> &mdash; Waste into resource</li>
+      </ul>
+      <p>Also includes: <strong>Opportunity Ranking</strong> (top 5 scored), <strong>Implementation Gateway</strong> (90-day action plan), and <strong>One-Page Brief</strong>.</p>
+      <p><strong>When to use:</strong> Before choosing an enterprise for a community. Before designing a government economic programme. When an entrepreneur asks "what business should I start here?"</p>
+    </div>
+  </div>
+
+  <!-- SKILL 5.4: /gov-proposal -->
+  <div class="skill-card" id="skill-gov-proposal">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/gov-proposal</span>
+        <span class="skill-name">Senior Policy &amp; Enterprise Consultant</span>
+        <span class="nav-badge badge-gov">Gov</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/gov-proposal.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Government</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Consultancies, ministries, NGOs</span></div>
+      </div>
+      <p><strong>What it does:</strong> Writes a complete, persuasive government proposal that a minister or director can read, approve, and act on &mdash; built entirely on sovereign assets first, with market revenue designed in from Day 1.</p>
+      <p><strong>What you give it:</strong> Policy or programme name, country, target ministry, and what government assets exist.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Policy Decoding</strong> &mdash; Internal analysis (not shown to government)</li>
+        <li><strong>Sovereign Asset Gateway</strong> &mdash; What government already owns</li>
+        <li><strong>Executive Business Case</strong> &mdash; One-page summary for the minister</li>
+        <li><strong>Problem Analysis</strong> &mdash; Current state, root causes, cost of inaction</li>
+        <li><strong>Proposed Solution</strong> &mdash; Step-by-step operational flow with value chain</li>
+        <li><strong>Local Economic Impact</strong> &mdash; Jobs, import substitution, GDP contribution</li>
+        <li><strong>Financial Model</strong> &mdash; Three revenue streams, break-even</li>
+        <li><strong>Implementation Plan</strong> &mdash; Phased timeline with risk register and KPIs</li>
+        <li><strong>Workforce Module</strong> &mdash; How the 3 populations deliver the programme</li>
+        <li><strong>Government Value Proposition</strong> &mdash; 5 reasons to adopt</li>
+        <li><strong>One-Page Pitch Card</strong> &mdash; Visual executive summary</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key feature:</strong> Includes a simulation of a 5-person government evaluation committee asking tough questions &mdash; with confident, data-backed responses prepared in advance.</p>
+      </div>
+      <p><strong>When to use:</strong> When submitting a proposal to any government body. When a consultancy needs to convince a minister.</p>
+    </div>
+  </div>
+
+  <!-- SKILL 5.5: /workforce-engine -->
+  <div class="skill-card" id="skill-workforce-engine">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/workforce-engine</span>
+        <span class="skill-name">Human Capital Transformation Strategist</span>
+        <span class="nav-badge badge-gov">Gov</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/workforce-engine.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Government</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Programme directors, HR planners</span></div>
+      </div>
+      <p><strong>What it does:</strong> Designs the complete delivery workforce for any programme &mdash; matching every role to one of 3 underutilised populations, showing training pathways, income models, and the trajectory from trainee to enterprise owner.</p>
+
+      <h4>The 3 Populations (Central to the Framework):</h4>
+      <div class="pop-grid">
+        <div class="pop-card">
+          <h5>Unemployed Graduates</h5>
+          <p><strong>Who:</strong> Degree/diploma holders, 18&ndash;35, digitally literate</p>
+          <p><strong>Bring:</strong> Education, energy, digital skills, ambition</p>
+          <div class="pathway">8&ndash;10 week fast-track &rarr; programme roles &rarr; enterprise owner</div>
+        </div>
+        <div class="pop-card">
+          <h5>Long-Term Unemployed</h5>
+          <p><strong>Who:</strong> Adults 25&ndash;55, limited formal education, community-embedded</p>
+          <p><strong>Bring:</strong> Community trust, local knowledge, practical skills</p>
+          <div class="pathway">8-week re-entry &rarr; community roles &rarr; cooperative leader</div>
+        </div>
+        <div class="pop-card">
+          <h5>Retired Professionals</h5>
+          <p><strong>Who:</strong> Former civil servants, teachers, nurses, engineers, 55+</p>
+          <p><strong>Bring:</strong> Decades of expertise, government networks, credibility</p>
+          <div class="pathway">2-week onboarding &rarr; advisory roles &rarr; consulting practice</div>
+        </div>
+      </div>
+
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Programme Mirror</strong> &mdash; Every function needed, with current cost vs. local alternative</li>
+        <li><strong>Workforce Strategy</strong> for each of the 3 populations</li>
+        <li><strong>Integrated Org Structure</strong> &mdash; How all three work together</li>
+        <li><strong>Market Revenue from Workforce</strong> &mdash; Private income generation</li>
+        <li><strong>Geographic Scaling Model</strong> &mdash; Sub-district to national</li>
+        <li><strong>Enterprise Ecosystem</strong> &mdash; 7 enterprise types that emerge</li>
+        <li><strong>Human Impact Stories</strong> &mdash; 3 named narratives</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key insight:</strong> Government saves 40&ndash;60% vs. foreign contractors, and the workforce becomes self-sustaining &mdash; they build their own enterprises.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.6: /grad-bridge -->
+  <div class="skill-card" id="skill-grad-bridge">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/grad-bridge</span>
+        <span class="skill-name">Education-to-Economy Integration Specialist</span>
+        <span class="nav-badge badge-education">Edu</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/grad-bridge.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Education</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Universities, TVET centres, schools</span></div>
+      </div>
+      <p><strong>What it does:</strong> Bridges the gap between the final year of education and economic life. Goal: <strong>zero unemployment on graduation day</strong> &mdash; every student leaves with either a job offer, a government programme placement, or a registered business.</p>
+      <p><strong>What you give it:</strong> Institution type and location, student cohort size, fields of study, graduation timeline, government programmes in area.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Current State Diagnosis</strong> &mdash; The education-to-unemployment gap in numbers</li>
+        <li><strong>Opportunity Matching by Field of Study</strong> &mdash; For 7+ fields: government match, employer, business opportunity, Day 1 income</li>
+        <li><strong>Final-Year Bridge Curriculum</strong> &mdash; 12-month programme alongside normal studies</li>
+        <li><strong>Institution Partnership Model</strong> &mdash; MoU structure and fee options</li>
+        <li><strong>Student Journey Narrative</strong> &mdash; One student's full pathway</li>
+        <li><strong>Pre-Graduation Pipeline Summary</strong> &mdash; Target: 80%+ placed before graduation</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key insight:</strong> Students register businesses, connect with government programmes, and secure placements BEFORE graduation &mdash; not after. The bridge runs during the final year.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.7: /idea-engine -->
+  <div class="skill-card" id="skill-idea-engine">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/idea-engine</span>
+        <span class="skill-name">Business Concept Developer</span>
+        <span class="nav-badge badge-enterprise">Enterprise</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/idea-engine.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Enterprise</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Students, entrepreneurs, families</span></div>
+      </div>
+      <p><strong>What it does:</strong> Takes any rough idea &mdash; from a student with a thought, a family with a vision, a group with partial plans &mdash; and develops it into an investment-ready, implementation-ready business plan.</p>
+      <p><strong>What you give it:</strong> The idea (product/service, customer, location), the founder's profile, available capital, and vision of success in 2 years.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Idea Validation</strong> &mdash; 5 tests to confirm viability (or a pivot matrix)</li>
+        <li><strong>Business Concept</strong> &mdash; One-sentence model, value proposition, revenue streams</li>
+        <li><strong>Market Research</strong> &mdash; TAM/SAM analysis, the first 10 specific customers by name</li>
+        <li><strong>Financial Projections</strong> &mdash; Startup costs (asset-first), monthly P&amp;L Year 1, 5-year vision</li>
+        <li><strong>90-Day Launch Plan</strong> &mdash; Validated, registered, first 3 paying customers</li>
+        <li><strong>Risk Register</strong> &mdash; Real African SME risks (late payment, competition, seasonality)</li>
+        <li><strong>Growth Pathways</strong> &mdash; 3 options: Focused Expert, Platform Builder, Replication Model</li>
+        <li><strong>One-Page Business Plan</strong> &mdash; Visual summary</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key feature:</strong> Market validation happens BEFORE production. The skill requires proof that someone will actually pay &mdash; not just "there will be demand."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.8: /community-enterprise -->
+  <div class="skill-card" id="skill-community-enterprise">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/community-enterprise</span>
+        <span class="skill-name">Community Economic Development Architect</span>
+        <span class="nav-badge badge-enterprise">Enterprise</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/community-enterprise.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Enterprise</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Communities, cooperatives, assemblies</span></div>
+      </div>
+      <p><strong>What it does:</strong> Designs profitable, community-owned enterprises that activate collective assets &mdash; land, skills, SUSU savings, natural resources &mdash; and build community wealth over 5&ndash;10 years.</p>
+      <p><strong>What you give it:</strong> Community location, population, enterprise idea, available assets, governance structures, market access, community champion.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Community Asset Inventory</strong> &mdash; Everything mapped and valued</li>
+        <li><strong>Enterprise Selection</strong> &mdash; 3 best options ranked with validation</li>
+        <li><strong>Structure &amp; Governance</strong> &mdash; Legal structure, governance framework, SUSU integration</li>
+        <li><strong>Financial Model</strong> &mdash; Startup costs (asset-first), revenue, break-even, member income Month 1 to Year 2+</li>
+        <li><strong>Market Connections</strong> &mdash; Local/regional buyers, government programme links</li>
+        <li><strong>8-Week Training &amp; Launch Plan</strong> &mdash; Community meeting to first revenue in 60 days</li>
+        <li><strong>Wealth Building Model</strong> &mdash; Year-by-year member income and community investments</li>
+        <li><strong>One-Page Enterprise Brief</strong></li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key features:</strong> No external funding required &mdash; built on community assets and SUSU savings. Government programme links (School Feeding, Planting for Food) as anchor contracts. Wealth accumulates in the community, not extracted by outsiders.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.9: /community-business-model-ghana -->
+  <div class="skill-card" id="skill-ghana-model">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/community-business-model-ghana</span>
+        <span class="skill-name">Ghana-Specific Enterprise Model</span>
+        <span class="nav-badge badge-enterprise">GH</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/community-business-model-ghana.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Enterprise (Ghana)</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Ghana communities and cooperatives</span></div>
+      </div>
+      <p><strong>What it does:</strong> The <code>/community-enterprise</code> skill PRE-LOADED with verified March 2026 Ghana market data. Every financial figure uses real, sourced, dated Ghana numbers.</p>
+      <h4>Verified Ghana Data Included:</h4>
+      <table>
+        <tbody>
+          <tr><td>Exchange Rate</td><td>GHS 10.85 = USD 1.00 (March 2026)</td></tr>
+          <tr><td>Inflation</td><td>3.3% (February 2026)</td></tr>
+          <tr><td>Minimum Wage</td><td>GHS 21.77/day (January 2026)</td></tr>
+          <tr><td>Gari Price</td><td>GHS 10.00/kg farmgate (NAFCO guaranteed)</td></tr>
+          <tr><td>Fish Prices</td><td>GHS 37&ndash;95/kg by species and processing</td></tr>
+          <tr><td>School Feeding</td><td>GHS 2.00 per child per day, 9,000 schools</td></tr>
+          <tr><td>Mobile Money</td><td>59.7% adult penetration</td></tr>
+          <tr><td>Corporate Tax</td><td>25%; VAT: 20% (or 3% flat rate for small retailers)</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Includes a worked example:</strong> A 40-member cassava-to-gari cooperative in Gomoa West District with complete startup costs, revenue model, and member income projections.</p>
+      <div class="key-insight">
+        <p><strong>When to use:</strong> Whenever <code>/community-enterprise</code> is being applied in Ghana. The verified data prevents the most common error &mdash; building projections on wrong prices.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.10: /business-rescue -->
+  <div class="skill-card" id="skill-business-rescue">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/business-rescue</span>
+        <span class="skill-name">Business Turnaround Specialist</span>
+        <span class="nav-badge badge-enterprise">Enterprise</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/business-rescue.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Enterprise</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Struggling businesses, lenders</span></div>
+      </div>
+      <p><strong>What it does:</strong> Diagnoses why a struggling business is failing and prescribes a structured 90-day rescue plan. Core insight: most "failures" are actually asset misallocation problems.</p>
+      <p><strong>What you give it:</strong> Business description, what's gone wrong, owner commitment level, assets, debts, government programme connection.</p>
+      <h4>7 Failure Modes It Diagnoses:</h4>
+      <ul class="output-list">
+        <li>Revenue concentration (one customer = all income)</li>
+        <li>Pricing too low (busy but broke)</li>
+        <li>Working capital trap (profitable on paper, no cash)</li>
+        <li>Market obsolescence (product no longer needed)</li>
+        <li>Founder dependency (everything depends on one person)</li>
+        <li>Cost/revenue mismatch (costs grow faster than income)</li>
+        <li>Unstructured growth (expanded without systems)</li>
+      </ul>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Health Diagnostic</strong> &mdash; 10 dimensions rated 1&ndash;10 with rescue verdict</li>
+        <li><strong>Root Cause Analysis</strong> &mdash; Which failure mode</li>
+        <li><strong>Business Asset Audit</strong> &mdash; Underutilised assets</li>
+        <li><strong>Revenue Redesign</strong> &mdash; Restructured streams</li>
+        <li><strong>Cost Restructure</strong> &mdash; Cut without killing capacity</li>
+        <li><strong>People Redesign</strong> &mdash; Team assessment + 3-population injection</li>
+        <li><strong>Government Programme Connection</strong> &mdash; Fastest revenue stabiliser</li>
+        <li><strong>Debt Restructure</strong> &mdash; Creditor proposals</li>
+        <li><strong>90-Day Rescue Plan</strong> &mdash; Week-by-week actions</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILL 5.11: /financial-model -->
+  <div class="skill-card" id="skill-financial-model">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/financial-model</span>
+        <span class="skill-name">Development Finance Specialist</span>
+        <span class="nav-badge badge-analytical">Analytical</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/financial-model.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Analytical</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Programme directors, investors, founders</span></div>
+      </div>
+      <p><strong>What it does:</strong> Builds the complete financial architecture for any programme or enterprise &mdash; revenue streams, cost structure, P&amp;L, cash flow, break-even, sensitivity analysis, and geographic scaling economics.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Revenue Architecture</strong> &mdash; Three streams (government + market + community), monthly Year 1, annual Years 2&ndash;5</li>
+        <li><strong>Cost Structure</strong> &mdash; Personnel, infrastructure (offset by sovereign assets), training, operations</li>
+        <li><strong>Profit and Loss</strong> &mdash; Monthly P&amp;L Year 1; annual Years 2&ndash;5</li>
+        <li><strong>Cash Flow Projection</strong> &mdash; Critical for Africa: profit &ne; cash (government pays 60&ndash;120 days late)</li>
+        <li><strong>Break-Even Analysis</strong> &mdash; Target: Month 12&ndash;18</li>
+        <li><strong>Return on Investment</strong> &mdash; Financial ROI + SROI</li>
+        <li><strong>Sensitivity Analysis</strong> &mdash; Stress-tested under adverse conditions</li>
+        <li><strong>Geographic Scaling Model</strong> &mdash; Sub-district to national economics</li>
+        <li><strong>Operational Documents</strong> &mdash; Monthly management report, KPI dashboard, decision rules</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key rules:</strong> Government revenue capped at 60% by Year 3. Market revenue must reach 35%+ by Year 2. 90-day cash reserve required. Exchange rate checked same-day.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.12: /social-value -->
+  <div class="skill-card" id="skill-social-value">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/social-value</span>
+        <span class="skill-name">Social Value Economist</span>
+        <span class="nav-badge badge-analytical">Analytical</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/social-value.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Analytical</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Budget defenders, impact investors</span></div>
+      </div>
+      <p><strong>What it does:</strong> Quantifies the full social value of a programme that cannot fully pay for itself through market revenue. Uses rigorous SROI methodology to prove social benefits exceed subsidy costs.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Social Purpose Statement</strong> &mdash; Why this programme exists + cost of non-existence</li>
+        <li><strong>11 Benefit Categories</strong> &mdash; Health, education, cohesion, mental health, gender, crime, migration, environment, cultural, trust, diaspora</li>
+        <li><strong>Benefit Monetisation</strong> &mdash; 7 methods to put currency value on each benefit</li>
+        <li><strong>SROI Calculation</strong> &mdash; "For every GHS 1 invested, GHS X of social value returned"</li>
+        <li><strong>Policy Justification</strong> &mdash; 5 government arguments</li>
+        <li><strong>Limited Revenue Pathways</strong> &mdash; Even social programmes can generate some revenue</li>
+        <li><strong>10-Year Projection</strong> &mdash; Cumulative compounding social value</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key insight:</strong> "Cutting this programme doesn't save money &mdash; it transfers costs to other budget lines at higher cost."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.13: /human-capital-profile -->
+  <div class="skill-card" id="skill-human-capital">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/human-capital-profile</span>
+        <span class="skill-name">Human Capital Development Specialist</span>
+        <span class="nav-badge badge-analytical">Analytical</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/human-capital-profile.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Analytical</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Workforce planners, educators</span></div>
+      </div>
+      <p><strong>What it does:</strong> Takes a specific population group and profiles them completely &mdash; who they are, what hidden assets they carry, how to activate them, and the full economic trajectory from training to enterprise ownership.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>Asset-First Population Audit</strong> &mdash; Hidden assets before any training</li>
+        <li><strong>Population Portrait</strong> &mdash; Demographics, survival strategies, digital access, psychology</li>
+        <li><strong>Role Architecture</strong> &mdash; Full spectrum from entry to enterprise</li>
+        <li><strong>Training Pathway</strong> &mdash; Weekly curriculum with African context accommodations</li>
+        <li><strong>Income &amp; Enterprise Model</strong> &mdash; Stipend &rarr; salary &rarr; business &rarr; independent enterprise</li>
+        <li><strong>Community &amp; Family Impact</strong> &mdash; Ripple effects beyond the individual</li>
+        <li><strong>Retention System</strong> &mdash; Why people leave and how to prevent it</li>
+        <li><strong>Geographic Deployment</strong> &mdash; Sub-district through national</li>
+        <li><strong>Government Pitch</strong> &mdash; The argument and recommended pilot</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key insight:</strong> Training is ADDITIVE &mdash; it only fills gaps. The profile identifies existing skills so training doesn't waste time teaching what people already know.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.14: /crowd-fund -->
+  <div class="skill-card" id="skill-crowd-fund">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/crowd-fund</span>
+        <span class="skill-name">Impact Investment Strategist</span>
+        <span class="nav-badge badge-capital">Capital</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/crowd-fund.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Capital</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Entrepreneurs, enterprises seeking capital</span></div>
+      </div>
+      <p><strong>What it does:</strong> Generates professional investment prospectuses and crowdfunding packages that make rational investors want to participate &mdash; diaspora, impact funds, community members, institutional capital.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>One-Page Investment Case</strong> &mdash; Problem, numbers, differentiation, the ask</li>
+        <li><strong>Full Prospectus</strong> &mdash; Market opportunity, financial projections, IRR, use of funds</li>
+        <li><strong>Impact Investment Case</strong> &mdash; SROI and SDG alignment</li>
+        <li><strong>Crowdfunding Strategy</strong> &mdash; Platform selection, campaign structure, diaspora connections</li>
+        <li><strong>Community Investment Model</strong> &mdash; SUSU-to-investment bridge</li>
+        <li><strong>Risk Register for Investors</strong> &mdash; With mitigation and protection</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>Key feature:</strong> Government programme contract positioned as "anchor contract that proves viability" &mdash; gives investors confidence revenue is not speculative.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.15: /pitch -->
+  <div class="skill-card" id="skill-pitch">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/pitch</span>
+        <span class="skill-name">Senior Business Development Strategist</span>
+        <span class="nav-badge badge-sales">Sales</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/pitch.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Sales</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Consultancies, directors pitching</span></div>
+      </div>
+      <p><strong>What it does:</strong> Generates the complete client engagement package &mdash; from the opening statement that gets attention, to fee structure, a scripted 10-minute pitch, objection handling, and follow-up protocol.</p>
+      <h4>What it gives you back:</h4>
+      <ul class="output-list">
+        <li><strong>The Silence Moment</strong> &mdash; 30-second opening that stops the room</li>
+        <li><strong>Capability Statement</strong> &mdash; Firm description + differentiator + "why now"</li>
+        <li><strong>Competitive Wedge</strong> &mdash; 4 arguments vs. international/local/NGO/government</li>
+        <li><strong>Handling the AI Question</strong> &mdash; Confident, non-defensive response</li>
+        <li><strong>Three-Gate Payment Structure</strong> &mdash; Discovery &rarr; Full engagement &rarr; Implementation</li>
+        <li><strong>10-Minute Pitch Script</strong> &mdash; Minute-by-minute narrative</li>
+        <li><strong>The Email That Gets a Meeting</strong> &mdash; 3 alternatives</li>
+        <li><strong>Objection Handling</strong> &mdash; 5 common objections with responses</li>
+        <li><strong>Engagement Letter</strong> &mdash; One-page, ready to sign</li>
+        <li><strong>Follow-Up Protocol</strong> &mdash; Day 1 through Week 6+</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILL 5.16: /proposal-trainer -->
+  <div class="skill-card" id="skill-proposal-trainer">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/proposal-trainer</span>
+        <span class="skill-name">Workforce Development Coach</span>
+        <span class="nav-badge badge-training">Training</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/proposal-trainer.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Training</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Graduate cohorts, NGO staff, government staff</span></div>
+      </div>
+      <p><strong>What it does:</strong> A complete 6-week, 10-module training programme that teaches anyone to operate the full Sovereign Framework consultancy system.</p>
+      <h4>10 Training Modules:</h4>
+      <table>
+        <thead><tr><th>Module</th><th>Topic</th><th>What Trainees Learn</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Orientation &amp; Doctrine</td><td>What the consultancy does, why old models fail</td></tr>
+          <tr><td>2</td><td>Sovereign Assets First</td><td>Asset mindset, 5 categories, asset hunt practice</td></tr>
+          <tr><td>3</td><td>Policy Literacy</td><td>5-question framework to read government policy</td></tr>
+          <tr><td>4</td><td>The Seven-Skill System</td><td>Skill map, sequencing, writing strong inputs</td></tr>
+          <tr><td>5</td><td>Output Quality Control</td><td>3-pass edit (accuracy, clarity, impact) + catching AI errors</td></tr>
+          <tr><td>6</td><td>Financial Literacy</td><td>Reading P&amp;L, cash flow vs. profit in Africa</td></tr>
+          <tr><td>7</td><td>Market Development</td><td>Client types, acquisition sequence, pricing</td></tr>
+          <tr><td>8</td><td>Presentation Skills</td><td>10-minute pitch structure, tough questions</td></tr>
+          <tr><td>9</td><td>Follow-Up &amp; Closing</td><td>Post-meeting protocol, contracts</td></tr>
+          <tr><td>10</td><td>Capstone</td><td>Complete real-world workflow, diagnosis to delivery</td></tr>
+        </tbody>
+      </table>
+      <div class="key-insight">
+        <p><strong>Key insight:</strong> Module 5 is critical &mdash; trainees learn to EDIT AI output, not just accept it raw. Module 7 teaches market development, which separates sustainable consultancies from grant-dependent ones.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.17: /data-verify -->
+  <div class="skill-card" id="skill-data-verify">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/data-verify</span>
+        <span class="skill-name">Data Integrity Guardian</span>
+        <span class="nav-badge badge-data">Data</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/data-verify.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Data Integrity</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Quality control for ALL skills</span></div>
+      </div>
+      <p><strong>What it does:</strong> The quality gate. Ensures no deliverable with economic, financial, or policy claims leaves the Framework without data verification against current official sources.</p>
+      <h4>Data Confidence Rating System:</h4>
+      <table>
+        <tbody>
+          <tr><td style="color:#2ecc71;font-size:1.2rem">&#x1F7E2;</td><td><strong>HIGH CONFIDENCE</strong></td><td>2025&ndash;2026 verified &mdash; use freely</td></tr>
+          <tr><td style="color:#f1c40f;font-size:1.2rem">&#x1F7E1;</td><td><strong>MEDIUM CONFIDENCE</strong></td><td>2023&ndash;2024 &mdash; use with caveat + 15% buffer</td></tr>
+          <tr><td style="color:#e74c3c;font-size:1.2rem">&#x1F534;</td><td><strong>LOW CONFIDENCE</strong></td><td>2021&ndash;2022 &mdash; flag or replace</td></tr>
+          <tr><td style="font-size:1.2rem">&#10060;</td><td><strong>UNACCEPTABLE</strong></td><td>Pre-2021 &mdash; never use</td></tr>
+        </tbody>
+      </table>
+      <h4>Absolute Red Lines (work STOPS until resolved):</h4>
+      <ul class="output-list">
+        <li>Exchange rate older than 7 days</li>
+        <li>Government budget from prior fiscal year</li>
+        <li>Import/export data older than 3 years</li>
+        <li>Unemployment rate without year stated</li>
+        <li>Commodity prices without date</li>
+      </ul>
+      <div class="key-insight">
+        <p><strong>When to use:</strong> ALWAYS before producing any document with financial figures. Before any government submission. Before any investor document.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILL 5.18: /data-sources -->
+  <div class="skill-card" id="skill-data-sources">
+    <div class="skill-card-header" onclick="toggleSkill(this)">
+      <div class="skill-card-title">
+        <span class="skill-cmd">/data-sources</span>
+        <span class="skill-name">Master Data Registry</span>
+        <span class="nav-badge badge-data">Data</span>
+      </div>
+      <span class="skill-toggle">&#9660;</span>
+    </div>
+    <div class="skill-card-body">
+      <div class="skill-meta">
+        <div class="skill-meta-item"><span class="label">File</span><span class="value">skills/data-sources.md</span></div>
+        <div class="skill-meta-item"><span class="label">Category</span><span class="value">Data Integrity</span></div>
+        <div class="skill-meta-item"><span class="label">For</span><span class="value">Reference for all skills</span></div>
+      </div>
+      <p><strong>What it does:</strong> The single reference for all data sources used across the Framework. Contains every free API, official government URL, and data access method.</p>
+      <h4>The Big Five Free Global APIs (no subscription needed):</h4>
+      <ul class="output-list">
+        <li><strong>World Bank Open Data</strong> &mdash; 200+ countries, 1,600+ indicators</li>
+        <li><strong>IMF DataMapper</strong> &mdash; GDP, inflation, unemployment, debt</li>
+        <li><strong>FAO FAOSTAT</strong> &mdash; Agricultural production, prices, trade</li>
+        <li><strong>UN Comtrade</strong> &mdash; Import/export data by product</li>
+        <li><strong>African Development Bank</strong> &mdash; Africa-specific indicators</li>
+      </ul>
+      <p>Also includes: country-specific official sources (Ghana, Nigeria, Kenya, South Africa, Ethiopia, Tanzania, Uganda), commodity price sources, development partner data, financial sector data, business registration data, and exchange rate locations.</p>
+      <p><strong>When to use:</strong> Whenever you need to verify a figure. Referenced internally by all other skills.</p>
+    </div>
+  </div>
+
+</section><!-- end skill-profiles -->
+
+<!-- SECTION 6: WORKFLOWS -->
+<section class="section" id="workflows">
+  <div class="section-header">
+    <div class="section-number">6</div>
+    <h2>How The Skills Work Together</h2>
+  </div>
+  <p>The 18 skills form an integrated system. Here are the common workflows:</p>
+
+  <h3>The Master Sequence</h3>
+  <div class="workflow-block">
+    <div class="workflow-steps">
+      <div class="workflow-step">
+        <span class="workflow-cmd">/data-verify</span>
+        <span class="workflow-arrow">&rarr;</span>
+        <span class="workflow-desc">Verify all data first</span>
+      </div>
+      <div class="workflow-step">
+        <span class="workflow-cmd">/asset-audit</span>
+        <span class="workflow-arrow">&rarr;</span>
+        <span class="workflow-desc">Map what already exists</span>
+      </div>
+      <div class="workflow-step">
+        <span class="workflow-cmd">/gov-proposal <em>or</em> /workforce-engine</span>
+        <span class="workflow-arrow">&rarr;</span>
+        <span class="workflow-desc">Depending on need</span>
+      </div>
+      <div class="workflow-step">
+        <span class="workflow-cmd">/financial-model</span>
+        <span class="workflow-arrow">&rarr;</span>
+        <span class="workflow-desc">Full economics</span>
+      </div>
+      <div class="workflow-step">
+        <span class="workflow-cmd">/social-value</span>
+        <span class="workflow-desc" style="color:var(--text-muted)">(if needed for non-commercial components)</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Community Enterprise Workflow</h3>
+  <div class="workflow-block">
+    <h4>A community wants to start an enterprise:</h4>
+    <div class="workflow-steps">
+      <div class="workflow-step"><span class="workflow-cmd">/opportunity-scan</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Identifies best enterprise options for the geography</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/community-enterprise</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Designs enterprise, governance, financial model</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/financial-model</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Detailed P&amp;L, cash flow, break-even</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/social-value</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Quantifies social return (if non-commercial benefits)</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/crowd-fund</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Investment prospectus (if external capital needed)</span></div>
+    </div>
+  </div>
+
+  <h3>Graduate Entrepreneur Workflow</h3>
+  <div class="workflow-block">
+    <h4>A graduate has a business idea:</h4>
+    <div class="workflow-steps">
+      <div class="workflow-step"><span class="workflow-cmd">/idea-engine</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Validates and develops the business plan</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/financial-model</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Detailed financials</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/pitch</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Sales and engagement strategy</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/crowd-fund</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Capital raising (if needed)</span></div>
+    </div>
+  </div>
+
+  <h3>Government Programme Workflow</h3>
+  <div class="workflow-block">
+    <h4>A government ministry wants a new programme:</h4>
+    <div class="workflow-steps">
+      <div class="workflow-step"><span class="workflow-cmd">/data-verify</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Ensures all data is current</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/asset-audit</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Maps what government already has</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/workforce-engine</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Designs the delivery workforce</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/gov-proposal</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Ready-to-submit proposal document</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/financial-model</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Validates financial viability</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/pitch</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Minister presentation package</span></div>
+    </div>
+  </div>
+
+  <h3>Business Rescue Workflow</h3>
+  <div class="workflow-block">
+    <h4>A business is struggling:</h4>
+    <div class="workflow-steps">
+      <div class="workflow-step"><span class="workflow-cmd">/business-rescue</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Diagnosis and 90-day rescue plan</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/financial-model</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Validates new revenue model</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/opportunity-scan</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Identifies new revenue opportunities</span></div>
+    </div>
+  </div>
+
+  <h3>Education Workflow</h3>
+  <div class="workflow-block">
+    <h4>An institution wants to reduce graduate unemployment:</h4>
+    <div class="workflow-steps">
+      <div class="workflow-step"><span class="workflow-cmd">/grad-bridge</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Designs final-year bridge programme</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/opportunity-scan</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Identifies local opportunities</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/human-capital-profile</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Deep profile of graduate capabilities</span></div>
+      <div class="workflow-step"><span class="workflow-cmd">/workforce-engine</span><span class="workflow-arrow">&rarr;</span><span class="workflow-desc">Deploys graduates into programmes</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: WHO SHOULD USE WHAT -->
+<section class="section" id="who-uses">
+  <div class="section-header">
+    <div class="section-number">7</div>
+    <h2>Who Should Use What</h2>
+  </div>
+
+  <div class="who-grid">
+    <div class="who-card">
+      <div class="who-label">A student or graduate with an idea</div>
+      <div class="who-start">/idea-engine</div>
+      <div class="who-then">Then: /financial-model &rarr; /pitch</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A graduate looking for work</div>
+      <div class="who-start">/grad-bridge</div>
+      <div class="who-then">Then: /human-capital-profile</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">An entrepreneur with a rough concept</div>
+      <div class="who-start">/idea-engine</div>
+      <div class="who-then">Then: /financial-model &rarr; /crowd-fund</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A community wanting to start an enterprise</div>
+      <div class="who-start">/community-enterprise</div>
+      <div class="who-then">Then: /financial-model &rarr; /social-value</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A struggling business owner</div>
+      <div class="who-start">/business-rescue</div>
+      <div class="who-then">Then: /financial-model &rarr; /opportunity-scan</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A district assembly planning development</div>
+      <div class="who-start">/opportunity-scan</div>
+      <div class="who-then">Then: /community-enterprise &rarr; /gov-proposal</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A government ministry designing a programme</div>
+      <div class="who-start">/asset-audit</div>
+      <div class="who-then">Then: /gov-proposal &rarr; /workforce-engine &rarr; /financial-model</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">An NGO supporting community development</div>
+      <div class="who-start">/community-enterprise</div>
+      <div class="who-then">Then: /social-value &rarr; /crowd-fund</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A diaspora investor seeking opportunities</div>
+      <div class="who-start">/opportunity-scan</div>
+      <div class="who-then">Then: /financial-model &rarr; /crowd-fund</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">A consultancy building its team</div>
+      <div class="who-start">/proposal-trainer</div>
+      <div class="who-then">Then: /pitch</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">Facing a complex, multi-dimensional problem</div>
+      <div class="who-start">/solve</div>
+      <div class="who-then">It will tell you which skills to use</div>
+    </div>
+    <div class="who-card">
+      <div class="who-label">Unsure where to start</div>
+      <div class="who-start">/solve</div>
+      <div class="who-then">It diagnoses and routes you</div>
+    </div>
+  </div>
+</section>
+
+<!-- SYSTEM MAP -->
+<section class="section" id="system-map">
+  <div class="section-header">
+    <div class="section-number">&bull;</div>
+    <h2>The Sovereign Framework &mdash; System Map</h2>
+  </div>
+
+<div class="diagram-box">THE SOVEREIGN FRAMEWORK&trade; &mdash; 18 SKILLS, ONE SYSTEM
+
+MASTER           /solve
+                    |
+DISCOVERY        /asset-audit  &lt;&gt;  /opportunity-scan
+                    |                    |
+GOVERNMENT       /gov-proposal  &lt;&gt;  /workforce-engine
+                    |                    |
+ENTERPRISE       /idea-engine  &lt;&gt;  /community-enterprise
+                 /business-rescue  /community-business-model-ghana
+                    |
+EDUCATION        /grad-bridge  &lt;&gt;  /human-capital-profile
+                    |
+ANALYTICAL       /financial-model  &lt;&gt;  /social-value
+                    |
+CAPITAL          /crowd-fund
+                    |
+SALES            /pitch
+                    |
+TRAINING         /proposal-trainer
+                    |
+DATA INTEGRITY   /data-verify  &lt;&gt;  /data-sources
+
+IDLE &rarr; ACTIVE  |  WASTE &rarr; RESOURCE  |  UNEMPLOYED &rarr; TAXPAYER</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>Confidential. <span class="gold">THE SOVEREIGN FRAMEWORK&trade;</span> is proprietary methodology.</p>
+  <p>Prepared by <span class="gold">Godfred Frimpong</span> &bull; March 2026 &bull; Version 1.0</p>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+
+<!-- JAVASCRIPT -->
+<script>
+// Toggle skill cards
+function toggleSkill(header) {
+  const card = header.parentElement;
+  card.classList.toggle('expanded');
+}
+
+// Toggle sidebar (mobile)
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// Close sidebar on link click (mobile)
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('sidebar').classList.remove('open');
+  });
+});
+
+// Active nav tracking
+const sections = document.querySelectorAll('.section, .skill-card, .hero');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveNav() {
+  let current = '';
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= 120) {
+      current = section.id;
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === '#' + current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Progress bar
+function updateProgress() {
+  const scroll = window.scrollY;
+  const height = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = (scroll / height) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+// Back to top
+function updateBackToTop() {
+  const btn = document.getElementById('backToTop');
+  if (window.scrollY > 400) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+}
+
+// Search functionality
+const searchData = [
+  { title: '/solve — Master Orchestrator', id: 'skill-solve', text: 'solve orchestrator diagnose problem routing complex multi-layered master brain' },
+  { title: '/asset-audit — Sovereign Asset Strategist', id: 'skill-asset-audit', text: 'asset audit inventory physical human capital programmatic relational financial idle underutilised' },
+  { title: '/opportunity-scan — Economic Intelligence', id: 'skill-opportunity-scan', text: 'opportunity scan geography business import substitution value addition market natural resources digital circular economy' },
+  { title: '/gov-proposal — Government Proposal Writer', id: 'skill-gov-proposal', text: 'government proposal minister policy enterprise consultant executive business case implementation' },
+  { title: '/workforce-engine — Human Capital', id: 'skill-workforce-engine', text: 'workforce engine graduates unemployed retired professionals 3 populations training deployment enterprise' },
+  { title: '/grad-bridge — Education-to-Economy', id: 'skill-grad-bridge', text: 'graduate bridge education university TVET school final year curriculum placement employment zero unemployment' },
+  { title: '/idea-engine — Business Concept Developer', id: 'skill-idea-engine', text: 'idea engine business plan entrepreneur startup validation market research financial projections launch' },
+  { title: '/community-enterprise — Community Development', id: 'skill-community-enterprise', text: 'community enterprise cooperative SUSU collective governance wealth building member income' },
+  { title: '/community-business-model-ghana — Ghana Model', id: 'skill-ghana-model', text: 'ghana community business model GHS cedis exchange rate gari cassava school feeding verified data' },
+  { title: '/business-rescue — Turnaround Specialist', id: 'skill-business-rescue', text: 'business rescue turnaround struggling failing revenue cost restructure 90 day rescue plan debt' },
+  { title: '/financial-model — Finance Specialist', id: 'skill-financial-model', text: 'financial model revenue P&L cash flow break even ROI sensitivity analysis geographic scaling' },
+  { title: '/social-value — Social Value Economist', id: 'skill-social-value', text: 'social value SROI social return investment intangible benefits monetisation subsidy programme' },
+  { title: '/human-capital-profile — Human Capital', id: 'skill-human-capital', text: 'human capital profile population group training pathway income enterprise activation deployment' },
+  { title: '/crowd-fund — Investment Strategist', id: 'skill-crowd-fund', text: 'crowd fund investment prospectus crowdfunding diaspora impact investor community shares SUSU' },
+  { title: '/pitch — Business Development', id: 'skill-pitch', text: 'pitch sales client engagement capability statement competitive wedge payment structure email meeting objection' },
+  { title: '/proposal-trainer — Training Coach', id: 'skill-proposal-trainer', text: 'proposal trainer training module curriculum quality control financial literacy market development presentation' },
+  { title: '/data-verify — Data Integrity', id: 'skill-data-verify', text: 'data verify verification quality gate confidence rating exchange rate red lines official sources' },
+  { title: '/data-sources — Master Registry', id: 'skill-data-sources', text: 'data sources API World Bank IMF FAO Comtrade AfDB Ghana Nigeria Kenya exchange rate' },
+  { title: 'What Is The Sovereign Framework?', id: 'what-is', text: 'what is sovereign framework idle assets organised people market connection wealth jobs taxpayers' },
+  { title: 'Five Sovereign Doctrines', id: 'doctrines', text: 'doctrines sovereign assets first market revenue mandate people delivery profitable provable evidence based' },
+  { title: 'How To Use The Skills', id: 'how-to-use', text: 'how to use skills claude code chatgpt gemini slash commands arguments' },
+  { title: 'Skill Directory — Quick Reference', id: 'quick-ref', text: 'skill directory quick reference table all skills overview' },
+  { title: 'How Skills Work Together', id: 'workflows', text: 'workflows sequence chain community enterprise graduate government business rescue education' },
+  { title: 'Who Should Use What', id: 'who-uses', text: 'who should use student graduate entrepreneur community business government NGO diaspora consultancy' },
+];
+
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+searchInput.addEventListener('input', function() {
+  const query = this.value.toLowerCase().trim();
+  if (query.length < 2) {
+    searchResults.classList.remove('active');
+    return;
+  }
+
+  const matches = searchData.filter(item =>
+    item.title.toLowerCase().includes(query) || item.text.toLowerCase().includes(query)
+  );
+
+  if (matches.length === 0) {
+    searchResults.innerHTML = '<div class="search-result-item"><span class="result-title">No results found</span></div>';
+  } else {
+    searchResults.innerHTML = matches.map(m =>
+      '<div class="search-result-item" onclick="goTo(\'' + m.id + '\')">' +
+      '<div class="result-title">' + m.title + '</div>' +
+      '</div>'
+    ).join('');
+  }
+  searchResults.classList.add('active');
+});
+
+searchInput.addEventListener('blur', function() {
+  setTimeout(() => searchResults.classList.remove('active'), 200);
+});
+
+searchInput.addEventListener('focus', function() {
+  if (this.value.trim().length >= 2) {
+    searchResults.classList.add('active');
+  }
+});
+
+function goTo(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    // If it's a skill card, expand it
+    if (el.classList.contains('skill-card') && !el.classList.contains('expanded')) {
+      el.classList.add('expanded');
+    }
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    searchResults.classList.remove('active');
+    searchInput.value = '';
+  }
+}
+
+// Keyboard shortcut for search
+document.addEventListener('keydown', function(e) {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    searchInput.focus();
+  }
+  if (e.key === 'Escape') {
+    searchInput.blur();
+    searchResults.classList.remove('active');
+  }
+});
+
+// Scroll events
+let ticking = false;
+window.addEventListener('scroll', function() {
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      updateActiveNav();
+      updateProgress();
+      updateBackToTop();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
+// Expand all / collapse all with keyboard
+document.addEventListener('keydown', function(e) {
+  if (e.altKey && e.key === 'e') {
+    document.querySelectorAll('.skill-card').forEach(c => c.classList.add('expanded'));
+  }
+  if (e.altKey && e.key === 'c') {
+    document.querySelectorAll('.skill-card').forEach(c => c.classList.remove('expanded'));
+  }
+});
+
+// Initial state
+updateActiveNav();
+updateProgress();
+</script>
+
+</body>
+</html>

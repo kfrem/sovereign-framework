@@ -70,6 +70,7 @@ Open `sovereign-framework-showcase.html` in any browser. Password: `sovereign202
 |---|---|---|
 | Idea Engine | `skills/idea-engine.md` | Develops any idea into an investment-ready business plan |
 | Community Enterprise | `skills/community-enterprise.md` | Designs collective enterprises for communities |
+| Community Business Model (Ghana) | `skills/community-business-model-ghana.md` | Ghana-specific enterprise model with verified 2026 market data |
 | Business Rescue | `skills/business-rescue.md` | Diagnoses and turnarounds struggling businesses in 90 days |
 
 ### Analytical
