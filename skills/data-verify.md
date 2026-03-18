@@ -429,5 +429,124 @@ If any box is unchecked: do not deliver until resolved.
 
 ---
 
-*This skill is the first gate of THE SOVEREIGN FRAMEWORK™. No economic analysis leaves without passing through it.*
+---
+
+## PART 9 — ADDITIONAL COUNTRY-SPECIFIC SOURCES
+
+### NIGERIA
+| Source | Data | URL |
+|---|---|---|
+| **National Bureau of Statistics (NBS)** | GDP, employment, inflation, trade, business statistics | `https://nigerianstat.gov.ng` |
+| **Central Bank of Nigeria (CBN)** | Exchange rate, lending rates, monetary policy | `https://cbn.gov.ng` |
+| **Federal Ministry of Finance** | Budget, fiscal policy | `https://finance.gov.ng` |
+| **Federal Inland Revenue Service (FIRS)** | Tax rates, VAT, corporate tax | `https://firs.gov.ng` |
+| **National Population Commission** | Census data | `https://nationalpopulation.gov.ng` |
+| **NAFDAC** | Food and drug regulation, product registration | `https://nafdac.gov.ng` |
+
+**NIGERIA SPECIFIC WARNING:** Nigeria has operated with multiple exchange rate windows. Always specify whether you are using the official CBN rate or the parallel market rate — and always state the date. Use the CBN official window rate for government proposals.
+
+### KENYA
+| Source | Data | URL |
+|---|---|---|
+| **Kenya National Bureau of Statistics (KNBS)** | Population, employment, GDP, CPI | `https://knbs.or.ke` |
+| **Central Bank of Kenya (CBK)** | Exchange rate, lending rates, mobile money | `https://centralbank.go.ke` |
+| **National Treasury** | Budget statements, development plans | `https://treasury.go.ke` |
+| **Kenya Revenue Authority (KRA)** | Tax rates, VAT, compliance | `https://kra.go.ke` |
+
+### SOUTH AFRICA
+| Source | Data | URL |
+|---|---|---|
+| **Stats SA** | All national statistics | `https://statssa.gov.za` |
+| **South African Reserve Bank (SARB)** | Exchange rate, monetary policy, financial sector | `https://resbank.co.za` |
+| **National Treasury** | Budget, MTEF | `https://treasury.gov.za` |
+| **SARS** | Tax rates | `https://sars.gov.za` |
+
+### ETHIOPIA
+| Source | Data | URL |
+|---|---|---|
+| **Central Statistical Agency (CSA)** | Population, prices, agriculture | `https://statsethiopia.gov.et` |
+| **National Bank of Ethiopia** | Exchange rate, monetary policy | `https://nbe.gov.et` |
+
+### TANZANIA
+| Source | Data | URL |
+|---|---|---|
+| **National Bureau of Statistics** | All national statistics | `https://nbs.go.tz` |
+| **Bank of Tanzania** | Exchange rate, monetary policy | `https://bot.go.tz` |
+
+### UGANDA
+| Source | Data | URL |
+|---|---|---|
+| **Uganda Bureau of Statistics (UBOS)** | All national statistics | `https://ubos.org` |
+| **Bank of Uganda** | Exchange rate, monetary policy | `https://bou.or.ug` |
+
+**For any country not listed:** Use WebSearch: "[Country] National Statistics Office official website" to find the primary official source.
+
+---
+
+## PART 10 — COMMODITY AND MARKET PRICE SOURCES
+
+| Source | What It Covers | Access |
+|---|---|---|
+| **World Bank Commodity Price Data (Pink Sheet)** | International commodity prices — cocoa, coffee, gold, oil, maize | Free: `https://worldbank.org/en/research/commodity-markets` |
+| **FAO GIEWS (Food Price Monitoring)** | Domestic food prices in African markets — city-level data | Free: `https://www.fao.org/giews/` |
+| **COCOBOD (Ghana)** | Ghana cocoa producer price — official, published seasonally | Free: `https://cocobod.gh` |
+| **Global Petrol Prices** | Current fuel prices by country — critical for transport cost modelling | Free: `https://globalpetrolprices.com` |
+
+---
+
+## PART 11 — DEVELOPMENT PARTNER AND AID FLOW DATA
+
+For market development targeting, pitch context, and competitive landscape analysis.
+
+| Source | What It Covers | Access |
+|---|---|---|
+| **OCHA Financial Tracking Service (FTS)** | All humanitarian aid and development flows by country | Free: `https://fts.unocha.org` |
+| **AidData** | Development finance database — who funds what where | Free: `https://aiddata.org` |
+| **IATI Registry** | All IATI-registered development project data | Free: `https://iatiregistry.org` |
+| **World Bank Projects** | Active World Bank lending portfolio by country | Free: `https://projects.worldbank.org` |
+
+---
+
+## PART 12 — FINANCIAL SECTOR DATA
+
+| Data Need | Source |
+|---|---|
+| Central bank policy rates | Each country's central bank website |
+| Commercial bank lending rates | World Bank: `PA.INT.PREM.NS.ZS` |
+| Microfinance rates | MIX Market: `https://mixmarket.org` |
+| Mobile money transaction data | Central bank quarterly reports |
+| Credit rating by country | Free summaries: `https://tradingeconomics.com` |
+
+---
+
+## PART 13 — BUSINESS REGISTRATION AND REGULATORY DATA
+
+| Source | What It Covers | Access |
+|---|---|---|
+| **World Bank Business Ready (B-READY)** | Registration costs, time, procedures by country | Free: `https://businessready.worldbank.org` |
+| **International Finance Corporation (IFC)** | Investment climate, SME data | Free: `https://ifc.org` |
+| **Each country's business registry** | Actual current registration fees | See country sections above |
+
+---
+
+## PART 14 — SKILL-TO-DATA-SOURCE QUICK REFERENCE
+
+| Skill | Primary Data Needed | First Source to Check |
+|---|---|---|
+| `/opportunity-scan` | Unemployment, GDP, sector growth, import values | World Bank API + UN Comtrade |
+| `/financial-model` | Exchange rate, inflation, tax rates, wages | Central bank (same-day) + World Bank API |
+| `/gov-proposal` | Government budget, unemployment, population | National statistical service + Ministry of Finance |
+| `/crowd-fund` | GDP per capita, remittances, FDI, mobile money | World Bank API |
+| `/business-rescue` | Lending rates, inflation, fuel prices, sector data | Central bank + globalpetrolprices.com |
+| `/asset-audit` | Exchange rate, construction costs, property values | Central bank + local quotation |
+| `/social-value` | GDP per capita, health/education expenditure | World Bank API + national ministry reports |
+| `/supply-chain` | Commodity prices, transport costs, storage costs | FAO + globalpetrolprices.com |
+| `/market-intel` | Competitor prices, market size, consumer spending | WebSearch + national statistics |
+| `/scale` | Market demand in target area, wages, rent | National statistics + WebSearch |
+| `/legal-setup` | Registration fees, tax rates, licence costs | Business registry + revenue authority |
+| `/country-data` | All macro indicators for the specific country | World Bank API + national sources |
+
+---
+
+*This skill is the first gate of THE SOVEREIGN FRAMEWORK. No economic analysis leaves without passing through it.*
 *Data integrity is not a courtesy — it is the foundation of our credibility and the protection of our commercial liability.*
