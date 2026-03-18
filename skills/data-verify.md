@@ -360,6 +360,105 @@ If a required data point cannot be verified from a source newer than 2023, use t
 
 ---
 
+## PART 5B — HUMAN INPUT PROTOCOL (When Online Data is Stale or Unavailable)
+
+Many critical data points — especially local prices, wages, registration fees, transport costs, and market conditions — cannot be found online or are outdated. In these cases, **pause and ask the user** rather than guessing.
+
+### When to Trigger Human Input
+
+Human input is REQUIRED when:
+- Any data point rated 🔴 or ❌ is needed for a financial model or budget
+- Local/district-level data is needed but only national data exists
+- Exchange rate is critical and online sources show conflicting figures
+- The user is in the location and can verify faster than any API
+- Commodity prices or input costs are needed for a specific market (not national average)
+- Registration fees, permit costs, or licence fees are needed (these change frequently and are rarely online)
+
+### How to Request Human Input
+
+When data cannot be verified online, present the user with a structured request:
+
+```
+╔══════════════════════════════════════════════════════════════════╗
+║  DATA INPUT NEEDED — Your local knowledge is more accurate      ║
+║  than any database for these figures                            ║
+╠══════════════════════════════════════════════════════════════════╣
+║                                                                  ║
+║  I could not verify the following data points online.            ║
+║  Please provide current figures if you know them.                ║
+║  Type "unknown" for any you cannot answer — I will               ║
+║  use estimates and flag them clearly.                            ║
+║                                                                  ║
+║  1. [Data point needed]                                          ║
+║     My best estimate: [figure] (from [source], [year])           ║
+║     Why it matters: [how this affects the plan]                  ║
+║     Your figure: ___                                             ║
+║                                                                  ║
+║  2. [Data point needed]                                          ║
+║     My best estimate: [figure] (from [source], [year])           ║
+║     Why it matters: [how this affects the plan]                  ║
+║     Your figure: ___                                             ║
+║                                                                  ║
+║  [Continue for all missing data points]                          ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+### Rules for Human-Provided Data
+
+1. **Always show your estimate first** — The user corrects your number, rather than generating from scratch. This is faster and catches errors in both directions.
+2. **Explain why it matters** — "The rent figure changes your break-even from Month 4 to Month 8" is more motivating than "Please provide rent data."
+3. **Accept "unknown"** — If the user doesn't know, use your best estimate with a clear [UNVERIFIED — USER COULD NOT CONFIRM] tag.
+4. **Never block on non-critical data** — If the missing data doesn't change the fundamental viability of the plan, proceed with estimates. Only block on data that could make the plan wrong.
+5. **Tag human-provided data clearly** — Mark as [USER-PROVIDED, date] so it's clear this came from the client, not an official source.
+6. **Cross-check where possible** — If the user says rent is GHS 200/month but your estimate was GHS 2,000/month, flag the discrepancy: "You said GHS 200 — the typical range for this area is GHS 1,500-2,500. Can you confirm?"
+
+### Data Categories That Almost Always Need Human Input
+
+These are rarely available online with sufficient accuracy:
+
+| Data Category | Why Online Fails | What to Ask the User |
+|---|---|---|
+| Local rent / property costs | National averages useless at district level | "What does a [size] shop/space cost per month in [specific area]?" |
+| Local wages | National minimum wage ≠ actual market rate | "What does a [role] typically earn per month in your area?" |
+| Local input costs | Commodity prices vary hugely by location | "What does [input] cost per [unit] where you are, right now?" |
+| Transport costs | Route-specific, fuel-price-dependent | "What does it cost to transport [goods] from [A] to [B]?" |
+| Registration / permit fees | Government websites often outdated | "Have you registered a business before? What did it cost?" |
+| Competitor prices | Not published anywhere | "What do your competitors charge for [product/service]?" |
+| Customer willingness to pay | No database for this | "What do people in your area currently pay for [product]?" |
+| Local power/water costs | Varies by location and usage | "What is your monthly electricity/water bill?" |
+| Market day schedule | Hyper-local knowledge | "Which days are market days in your area?" |
+
+### Workflow Integration
+
+```
+STEP 1: Run /data-verify — retrieve all online data
+STEP 2: Rate every data point (🟢 🟡 🔴 ❌)
+STEP 3: For 🔴 and ❌ items critical to the plan:
+         → Present Human Input Request (format above)
+         → Wait for user response
+STEP 4: Integrate user data, tagged as [USER-PROVIDED]
+STEP 5: Cross-check user data against estimates (flag discrepancies)
+STEP 6: Produce final Data Confidence Report with mixed sources
+STEP 7: Proceed with substantive deliverable
+```
+
+### In the Data Confidence Report
+
+Add a new row type for human-provided data:
+
+```
+║ Local rent     ║ GHS 1,800/mo     ║ 2026 ║ User-provided  ║ 👤 USER   ║
+║ Input cost     ║ GHS 45/bag       ║ 2026 ║ User-provided  ║ 👤 USER   ║
+║ Transport      ║ GHS 120/trip     ║ 2026 ║ User-provided  ║ 👤 USER   ║
+║ Competitor     ║ unknown          ║  —   ║ User unknown   ║ ⚠️ EST    ║
+║ price          ║ Est: GHS 25/unit ║      ║ Using estimate ║           ║
+```
+
+**The principle:** Online data gives you the macro picture. The user gives you the micro picture. Both are needed. Neither alone is sufficient for a plan that works in the real world.
+
+---
+
 ## PART 6 — ABSOLUTE RED LINES
 
 These conditions STOP all work until resolved:
